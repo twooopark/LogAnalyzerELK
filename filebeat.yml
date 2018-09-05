@@ -1,0 +1,6 @@
+filebeat.prospectors:
+- type: log
+  paths:
+   - C:\Program Files\Filebeat\AdminLog\*.log
+output.logstash:
+  hosts: ["a:5044"]
