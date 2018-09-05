@@ -33,8 +33,7 @@ IDE Spring Tool Suite 3.9.5 / Eclipse Photon (4.8.0)
 
 ## 프로젝트 구조
 
-<
-src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/struc.PNG" width="700px" height="300px" />
+<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/struc.PNG" width="700px" height="300px" />
 
 ## 주어진 데이터
 원본 데이터 예시
@@ -147,7 +146,7 @@ Inputs 과 Harvesters 이 두가지는 같이 일한다, 파일 끝을 잡고, o
 손쉽게 데이터 보존기간과 데이터 최대 사용량을 설정하여 ELK의 디스크 공간 문제를 해결한다.
 
 1. 설치 및 테스트
-<src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/702787-14353.png" width="670px" height="360px" />
+<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/702787-14353.png" width="670px" height="360px" />
 2. 로그 수집 & ogstash로 전송 테스트
 filbeat.yml 수정 후, ./filebeat -e -d "publish"
 
@@ -217,7 +216,7 @@ output {
 
 4. 실제로 전송된 데이터 확인, fileter 플러그인을 통해 message 부분이 파싱된 것을 확인 할 수 있다.
 > https://주소.ap-northeast-1.aws.found.io:포트/logstash-2018.09.03/_search?pretty&q=response=200
-<src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/filebeat-logstash-elasticCloud2.PNG" width="700px" height="1000px" />
+<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/filebeat-logstash-elasticCloud2.PNG" width="700px" height="1000px" />
 
 ## Logstash / grok-pattern
 - grok 정규식 패턴 : https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns
@@ -279,7 +278,7 @@ ElasticSearch에 미리 매핑을 만들어 두어야 합니다. 여기서 매�
 
 > 해결방안 : ElasticSearch의 인덱스 탬플릿 생성
 es에서 put방식으로 넣으면 됨.
-https://github.com/twooopark/ELK_Summary/blob/master/_template-my_index_template.json
+https://github.com/twooopark/LogAnalyzerELK/blob/master/_template-my_index_template.json
 
 > 또 다른 문제, 날짜 형식 변환 (target 때문에 )
 ```json
