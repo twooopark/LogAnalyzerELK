@@ -66,8 +66,7 @@
             }
           },
           "conn_date" : {
-            "type" : "date",
-	   "format" : "yyyy/MM/dd HH:mm:ss"
+            "type" : "date"
           },
           "conn_id" : {
             "type" : "text",
