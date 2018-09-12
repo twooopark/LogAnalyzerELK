@@ -428,3 +428,13 @@ ID
 처럼 구분자와 데이터 항목을 분류해서...? (공백 문자로 인해 실수하기 쉽기 때문에, 안 좋은 듯)
 --> 뭐가 날짜인지 IP인지 ID인지 스스로 파악할 수 있는 알고리즘 필요... 제일 별로인 아이디어...
 ```
+
+## 참고자료 regex Generators
+
+- [Txt2Re](http://www.txt2re.com/index.php3) - Generate Regular expressions based on a string
+- [Regex Generator++](http://regex.inginf.units.it) - Automatic Generation of Text Extraction Patterns from Examples
+- [regexgen](https://github.com/devongovett/regexgen) - Generates regular expressions that match a set of strings.
+- [RegexGenerator](https://github.com/MaLeLabTs/RegexGenerator) - A tool for generating regular expressions for text extraction (by @MaLeLabTs)
+- [Gamon's numberic range generator](http://gamon.webfactional.com/regexnumericrangegenerator/) - Regex Numeric Range Generator, when you need to match an integer range.
+- [rgxg](https://rgxg.github.io) - Command line tool to generate Regex
+
