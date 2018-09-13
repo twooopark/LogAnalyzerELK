@@ -438,3 +438,26 @@ ID
 - [Gamon's numberic range generator](http://gamon.webfactional.com/regexnumericrangegenerator/) - Regex Numeric Range Generator, when you need to match an integer range.
 - [rgxg](https://rgxg.github.io) - Command line tool to generate Regex
 
+
+## 필터 생성기 초안
+<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/struc.PNG" width="600px" height="250px" />
+```
+파일명과 로그데이터를 입력하고, 입력 버튼을 누르면, 
+지정된 구분자에 따라 문자들이 나눠진다.
+나눠진 문자들은 우측과 같은 각 항목 별로 drag & drop을 이용해 삽입한다.
+문자(item)들은 각각 span 태그로, id는 순서대로 drag1 ... drag번호 로 생성된다.
+각 구분자(sep)도 순서대로 번호를 매김으로써 필터 생성 시 dragN과 구분자를 매칭시켜 만들 수 있도록 한다.
+
+IP와 시간은 사용자의 편의성을 위해 합쳐져 있도록 추가적인 처리가 필요하다.
+```
+# 필터 생성기 동작방식(알고리즘) 초안
+```
+위의 filename을 예시로 들면,
+1. 가장 좌측부터 문자 하나씩 읽어나간다. 
+2. 구분자(sep)가 있는지 확인한다.
+	2-1. O : sep[0]에 sep을 담는다.
+	2-2. X : sep[0]에 아무것도 담지 않는다.
+3. 
+
+```
+
