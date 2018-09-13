@@ -440,7 +440,8 @@ ID
 
 
 ## 필터 생성기 초안
-<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/struc.PNG" width="600px" height="250px" />
+<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/ElasticSearch/filtergenerator.PNG" width="800px" height="350px" />
+
 ```
 파일명과 로그데이터를 입력하고, 입력 버튼을 누르면, 
 지정된 구분자에 따라 문자들이 나눠진다.
@@ -450,6 +451,8 @@ ID
 
 IP와 시간은 사용자의 편의성을 위해 합쳐져 있도록 추가적인 처리가 필요하다.
 ```
+
+
 # 필터 생성기 동작방식(알고리즘) 초안
 ```
 위의 filename을 예시로 들면,
@@ -458,6 +461,5 @@ IP와 시간은 사용자의 편의성을 위해 합쳐져 있도록 추가적�
 	2-1. O : sep[0]에 sep을 담는다.
 	2-2. X : sep[0]에 아무것도 담지 않는다.
 3. 
-
 ```
 
