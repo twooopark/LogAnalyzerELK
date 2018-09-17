@@ -1,6 +1,5 @@
 PUT _template/elog_index_template
 {
-  "elog_index_template": {
     "order": 0,
     "version": 11311,
     "index_patterns": [
@@ -90,5 +89,4 @@ PUT _template/elog_index_template
       }
     },
     "aliases": {}
-  }
 }
