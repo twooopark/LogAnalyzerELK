@@ -4,4 +4,4 @@ filebeat.prospectors:
    - C:\Program Files\Filebeat\AdminLog\*.log
   encoding: euc-kr
 output.logstash:
-  hosts: ["a:5044"]
+  hosts: ["주소:포트(5044)"]

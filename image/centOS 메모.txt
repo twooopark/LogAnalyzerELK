@@ -1,0 +1,40 @@
+
+//자바 환경 변수 설정
+[developer:morning:/home/morning] export JAVA_HOME=/usr/java/jdk1.8.0_181
+[developer:morning:/home/morning] export PATH=$PATH:/usr/java/jdk1.8.0_181/bin
+
+
+//시스템 재시작 없이 설정 적용하기는 ,,, source /root/.bash_profile 인데... permission denied 떠서..
+//걍 profile 들어간 파일 검색해보고, 권한 있는 그럴듯한거 적용해봄; 의미 없을 듯
+[developer:morning:/home/morning] find / -name profile
+[developer:morning:/home/morning] source /etc/profile
+//rollback...
+
+
+//자바 설치, 설정 확인
+[developer:morning:/home/morning] java -version
+java version "1.8.0_181"
+Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
+
+[developer:morning:/home/morning] echo $JAVA_HOME
+/usr/java/jdk1.8.0_181
+
+[developer:morning:/home/morning] echo $PATH
+/usr/java/jdk1.8.0_181/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/morning
+
+
+
+//ELK tar파일 sftp로 전송 후, 압축해제 및 네트워크 설정(kibana) 완료
+[developer:morning:/home/morning/elk] ls
+elasticsearch-6.4.0         kibana-6.4.0-linux-x86_64         logstash-6.4.0
+elasticsearch-6.4.0.tar.gz  kibana-6.4.0-linux-x86_64.tar.gz  logstash-6.4.0.tar.gz
+
+
+
+//자바 경로 이건가 해서 다시 환경변수 바꿔서 해봄.. > 안됨
+[developer:morning:/etc/alternatives] alternatives --config java
+There is 1 program that provides 'java'.
+  Selection    Command
+-----------------------------------------------
+*+ 1           java-1.8.0-openjdk.x86_64 (/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/bin/java)

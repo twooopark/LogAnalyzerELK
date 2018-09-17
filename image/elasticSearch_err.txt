@@ -1,0 +1,70 @@
+[developer:morning:/home/morning/elk] ll
+total 429424
+drwxr-x---  9 morning service       155 Sep 14 10:00 elasticsearch-6.4.0
+-rw-r--r--  1 morning service  97901357 Sep 13 12:58 elasticsearch-6.4.0.tar.gz
+drwxr-x--- 11 morning service       229 Aug 18 08:50 kibana-6.4.0-linux-x86_64
+-rw-r--r--  1 morning service 187936225 Sep 11 09:27 kibana-6.4.0-linux-x86_64.tar.gz
+drwxr-x--- 13 morning service       267 Sep 11 10:30 logstash-6.4.0
+-rw-r--r--  1 morning service 153887188 Sep 11 09:31 logstash-6.4.0.tar.gz
+[developer:morning:/home/morning/elk] chmod 755 elasticsearch-6.4.0
+[developer:morning:/home/morning/elk] cd elasticsearch-6.4.0/
+[developer:morning:/home/morning/elk/elasticsearch-6.4.0] cd bin
+[developer:morning:/home/morning/elk/elasticsearch-6.4.0/bin] ./elasticsearch
+[2018-09-14T10:04:01,309][INFO ][o.e.n.Node               ] [] initializing ...
+[2018-09-14T10:04:01,405][INFO ][o.e.e.NodeEnvironment    ] [RoOiQpn] using [1] data paths, mounts [[/home (/dev/mapper/vg01-home)]], net usable_space [17.5gb], net total_space [19.9gb], types [xfs]
+[2018-09-14T10:04:01,406][INFO ][o.e.e.NodeEnvironment    ] [RoOiQpn] heap size [1007.3mb], compressed ordinary object pointers [true]
+[2018-09-14T10:04:01,407][INFO ][o.e.n.Node               ] [RoOiQpn] node name derived from node ID [RoOiQpnhQAaF18nipXBjGw]; set [node.name] to override
+[2018-09-14T10:04:01,408][INFO ][o.e.n.Node               ] [RoOiQpn] version[6.4.0], pid[13961], build[default/tar/595516e/2018-08-17T23:18:47.308994Z], OS[Linux/3.10.0-862.11.6.el7.x86_64/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_181/25.181-b13]
+[2018-09-14T10:04:01,408][INFO ][o.e.n.Node               ] [RoOiQpn] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/tmp/elasticsearch.rCiMmMLi, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Des.path.home=/home/morning/elk/elasticsearch-6.4.0, -Des.path.conf=/home/morning/elk/elasticsearch-6.4.0/config, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+[2018-09-14T10:04:03,853][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [aggs-matrix-stats]
+[2018-09-14T10:04:03,853][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [analysis-common]
+[2018-09-14T10:04:03,853][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [ingest-common]
+[2018-09-14T10:04:03,853][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [lang-expression]
+[2018-09-14T10:04:03,854][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [lang-mustache]
+[2018-09-14T10:04:03,854][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [lang-painless]
+[2018-09-14T10:04:03,854][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [mapper-extras]
+[2018-09-14T10:04:03,854][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [parent-join]
+[2018-09-14T10:04:03,854][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [percolator]
+[2018-09-14T10:04:03,854][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [rank-eval]
+[2018-09-14T10:04:03,854][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [reindex]
+[2018-09-14T10:04:03,855][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [repository-url]
+[2018-09-14T10:04:03,855][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [transport-netty4]
+[2018-09-14T10:04:03,855][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [tribe]
+[2018-09-14T10:04:03,855][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-core]
+[2018-09-14T10:04:03,855][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-deprecation]
+[2018-09-14T10:04:03,855][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-graph]
+[2018-09-14T10:04:03,856][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-logstash]
+[2018-09-14T10:04:03,856][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-ml]
+[2018-09-14T10:04:03,856][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-monitoring]
+[2018-09-14T10:04:03,856][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-rollup]
+[2018-09-14T10:04:03,856][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-security]
+[2018-09-14T10:04:03,856][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-sql]
+[2018-09-14T10:04:03,856][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-upgrade]
+[2018-09-14T10:04:03,857][INFO ][o.e.p.PluginsService     ] [RoOiQpn] loaded module [x-pack-watcher]
+[2018-09-14T10:04:03,857][INFO ][o.e.p.PluginsService     ] [RoOiQpn] no plugins loaded
+[2018-09-14T10:04:03,895][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.NullPointerException
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:140) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:127) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.4.0.jar:6.4.0]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.4.0.jar:6.4.0]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:93) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:86) ~[elasticsearch-6.4.0.jar:6.4.0]
+Caused by: java.lang.NullPointerException
+	at sun.nio.fs.UnixFileSystem.getPath(UnixFileSystem.java:273) ~[?:?]
+	at org.elasticsearch.common.io.PathUtils.get(PathUtils.java:60) ~[elasticsearch-core-6.4.0.jar:6.4.0]
+	at org.elasticsearch.monitor.os.OsProbe.readSysFsCgroupMemoryLimitInBytes(OsProbe.java:408) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.monitor.os.OsProbe.getCgroupMemoryLimitInBytes(OsProbe.java:395) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.monitor.os.OsProbe.getCgroup(OsProbe.java:488) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.monitor.os.OsProbe.osStats(OsProbe.java:531) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.xpack.ml.MachineLearning.additionalSettings(MachineLearning.java:319) ~[?:?]
+	at org.elasticsearch.plugins.PluginsService.updatedSettings(PluginsService.java:203) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.node.Node.<init>(Node.java:316) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.node.Node.<init>(Node.java:256) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:326) ~[elasticsearch-6.4.0.jar:6.4.0]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:136) ~[elasticsearch-6.4.0.jar:6.4.0]
+	... 6 more
+[developer:morning:/home/morning/elk/elasticsearch-6.4.0/bin] 
