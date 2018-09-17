@@ -146,7 +146,7 @@ Inputs 과 Harvesters 이 두가지는 같이 일한다, 파일 끝을 잡고, o
 손쉽게 데이터 보존기간과 데이터 최대 사용량을 설정하여 ELK의 디스크 공간 문제를 해결한다.
 
 1. 설치 및 테스트
-<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/image/702787-14353.png" width="670px" height="360px" />
+<img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/image/filebeat/filebeat_window_install.png" width="670px" height="360px" />
 2. 로그 수집 & ogstash로 전송 테스트
 filbeat.yml 수정 후, ./filebeat -e -d "publish"
 
