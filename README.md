@@ -494,3 +494,56 @@ filenameItem3이면, 서버명은 파일네임 아이템들 중에  0123 4번째
 >> document.getElementById(fieldName[fn]).children[0].id
 5. ...
 ```
+
+
+### dataTrans Process
+```
+		
+#### input example
+devweb_devweb.dcsms.co.kr_access_18081615.log
+[\-\_\^\.\s\[\]\|\:]+
+
+[2018-08-16 15:57:51] jwmoon|172.21.25.207|/synergy/content/callerbook/limit_list
+[\^\s\[\]\|]+
+
+#### json, DTO example
+jsonData = 
+	{
+	  "server": "filenameItem0",
+	  "service": "filenameItem2",
+	  "accessDate": "logdataItem0,logdataItem1",
+	  "accessIp": "logdataItem3",
+	  "accessId": "logdataItem2",
+	  "accessUri": "logdataItem4"
+	}
+	
+#### MappingFieldDTO 
+[
+server=filenameItem0, 
+service=filenameItem2, 
+accessDate=logdataItem0,logdataItem1, 
+accessIp=logdataItem3, 
+accessId=logdataItem2, 
+accessUri=logdataItem4, 
+action=null, 
+remark=null
+]
+	
+
+#### grok(output) example
+grok {
+	match => {
+		"source" => 
+			["%{WINPATH:file_path}\\%{WORD2:server}_%{WORD2:service}_%{WORD2:doctype}_%{DATENUM2:file_date}.%{WORD2:file_type}$"]
+	}
+}		
+grok {
+	match => {
+		"message" => 
+			["\[(?<access_date>%{YEAR}/%{MONTHNUM2}/%{MONTHDAY} %{TIME})\] %{IPORHOST:access_ip} \| %{USER:access_id} \| %{DATA:access_uri} \| %{DATA:action} \| %{DATA:remark}?$",
+			"^%{WORD:access_date}\^%{logSep:access_ip}\^%{logSep:access_id}\^%{DATA:access_uri}\^%{DATA:action}\^%{DATA:remark}?$"]
+
+	}
+}
+*/
+```
