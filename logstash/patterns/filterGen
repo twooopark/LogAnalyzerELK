@@ -1,9 +1,8 @@
 # 추가 패턴
 WORD2 [a-zA-Z0-9]+
-DATENUM2 [0-9]+
 
-noSep [^\-\_\^\.\s\[\]\|\:]+
-Sep [\-\_\^\.\s\[\]\|\:]+
+DATENUM1 [0-9]+
+DATENUM2 [0-9\/\-]+
 
 fnSep [\_\.\[\]]+
 fnSepInv [^\_\.\[\]]+
