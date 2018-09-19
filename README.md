@@ -541,7 +541,7 @@ grok {
 	match => {
 		"message" => 
 			["\[(?<access_date>%{YEAR}/%{MONTHNUM2}/%{MONTHDAY} %{TIME})\] %{IPORHOST:access_ip} \| %{USER:access_id} \| %{DATA:access_uri} \| %{DATA:action} \| %{DATA:remark}?$",
-			"^%{WORD:access_date}\^%{logSep:access_ip}\^%{logSep:access_id}\^%{DATA:access_uri}\^%{DATA:action}\^%{DATA:remark}?$"]
+			"^%{WORD:access_date}\^%{ldSep:access_ip}\^%{ldSep:access_id}\^%{DATA:access_uri}\^%{DATA:action}\^%{DATA:remark}?$"]
 
 	}
 }

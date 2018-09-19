@@ -94,11 +94,3 @@ SYSLOGBASE %{SYSLOGTIMESTAMP:timestamp} (?:%{SYSLOGFACILITY} )?%{SYSLOGHOST:logs
 # Log Levels
 LOGLEVEL ([Aa]lert|ALERT|[Tt]race|TRACE|[Dd]ebug|DEBUG|[Nn]otice|NOTICE|[Ii]nfo|INFO|[Ww]arn?(?:ing)?|WARN?(?:ING)?|[Ee]rr?(?:or)?|ERR?(?:OR)?|[Cc]rit?(?:ical)?|CRIT?(?:ICAL)?|[Ff]atal|FATAL|[Ss]evere|SEVERE|EMERG(?:ENCY)?|[Ee]merg(?:ency)?)
 
-
-
-# 추가 패턴
-WORD2 [a-zA-Z0-9]+
-DATENUM2 [0-9]+
-
-noSep [^\-\_\^\.\s\[\]\|\:]+
-Sep [\-\_\^\.\s\[\]\|\:]+

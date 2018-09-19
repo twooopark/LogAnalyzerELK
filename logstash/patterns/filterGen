@@ -1,8 +1,13 @@
+# 추가 패턴
 WORD2 [a-zA-Z0-9]+
 DATENUM2 [0-9]+
 
-fileSep [\_\.\[\]]+
-fileSepR [^\_\.\[\]]+
+noSep [^\-\_\^\.\s\[\]\|\:]+
+Sep [\-\_\^\.\s\[\]\|\:]+
 
-logSep [\^\s\[\]\|]+
-logSepR [^\^\s\[\]\|]+
+fnSep [\_\.\[\]]+
+fnSepInv [^\_\.\[\]]+
+
+ldSep [\^\s\[\]\|]+
+ldSepInv [^\^\s\[\]\|]+
+
