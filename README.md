@@ -1,26 +1,6 @@
 # LogAnalyzer_ELK
 > ELK 활용 관리자 접근로그 수집/분석/시각화
 
-## 참고자료
-
-Getting started with the Elastic Stack | Elastic Stack Overview [6.4] | Elastic
-https://www.elastic.co/guide/en/elastic-stack-overview/6.4/get-started-elastic-stack.html
-
-Filebeat Reference [6.4] | Elastic
-https://www.elastic.co/guide/en/beats/filebeat/6.4/index.html
-
-Logstash Reference [6.4] | Elastic
-https://www.elastic.co/guide/en/logstash/current/index.html
-
-Elasticsearch Reference [6.4] | Elastic
-https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-
-Kibana User Guide [6.4] | Elastic
-https://www.elastic.co/guide/en/kibana/current/index.html
-
-
-
-
 ## 프로젝트 기능
 
 * 웹 서비스는 보통 관리자 페이지와 사용자 페이지로 나뉜다.
@@ -518,16 +498,15 @@ filenameItem3이면, 서버명은 파일네임 아이템들 중에  0123 4번째
 
 ### dataTrans Process
 ```
-//javascript에서 문자열로 필터를 만들고, 이 결과물로 자바에서 logstash.conf 파일을 수정하자.
-
-* input example
+		
+#### input example
 devweb_devweb.dcsms.co.kr_access_18081615.log
 [\-\_\^\.\s\[\]\|\:]+
 
 [2018-08-16 15:57:51] jwmoon|172.21.25.207|/synergy/content/callerbook/limit_list
 [\^\s\[\]\|]+
 
-* json, DTO
+#### json, DTO example
 jsonData = 
 	{
 	  "server": "filenameItem0",
@@ -538,7 +517,7 @@ jsonData =
 	  "accessUri": "logdataItem4"
 	}
 	
-MappingFieldDTO 
+#### MappingFieldDTO 
 [
 server=filenameItem0, 
 service=filenameItem2, 
@@ -550,4 +529,21 @@ action=null,
 remark=null
 ]
 	
+
+#### grok(output) example
+grok {
+	match => {
+		"source" => 
+			["%{WINPATH:file_path}\\%{WORD2:server}_%{WORD2:service}_%{WORD2:doctype}_%{DATENUM2:file_date}.%{WORD2:file_type}$"]
+	}
+}		
+grok {
+	match => {
+		"message" => 
+			["\[(?<access_date>%{YEAR}/%{MONTHNUM2}/%{MONTHDAY} %{TIME})\] %{IPORHOST:access_ip} \| %{USER:access_id} \| %{DATA:access_uri} \| %{DATA:action} \| %{DATA:remark}?$",
+			"^%{WORD:access_date}\^%{ldSep:access_ip}\^%{ldSep:access_id}\^%{DATA:access_uri}\^%{DATA:action}\^%{DATA:remark}?$"]
+
+	}
+}
+*/
 ```
