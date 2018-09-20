@@ -38,6 +38,7 @@ IDE Spring Tool Suite 3.9.5 / Eclipse Photon (4.8.0)
 
 ## 프로젝트 구조
 <img src="https://github.com/twooopark/LogAnalyzerELK/blob/master/image/struc.PNG" width="700px" height="300px" />
+
 ```
 파일비트로 로그 데이터를 수집하여 로그 스태시에 넘겨주고, 로그스태시는 그 데이터들을 가공하여
 엘라스틱 서치에 저장합니다.키바나는 엘라스틱 서치에 저장된 데이터를 시각화합니다.
@@ -84,7 +85,8 @@ dloer_casan_access_18080811.log
 * 여러 파일 수집
 	- 우리는 접근 로그가 하나의 파일이 아니라 시간별, 서비스별로 로그 파일 분리되어 있다. 
 	- → paths: - /home/...경로.../*.log 처럼 경로 설정 부분에서 처리
-	- (prospectors를 통해, 새로 생성된 파일에 대한 부분만 처리 할 수 있다.) 출처 : http://yongho1037.tistory.com/709
+	- (prospectors를 통해, 새로 생성된 파일에 대한 부분만 처리 할 수 있다.) 
+	출처 : http://yongho1037.tistory.com/709
 ```
 
 ## Filebeat - Logstash - ElasticSearch 구조를 선택 한 이유?
