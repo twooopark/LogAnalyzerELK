@@ -1,0 +1,544 @@
+[
+  {
+    "_id": "e00f1270-ba34-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "서비스별 접근 시간대 heat",
+      "visState": "{\"title\":\"서비스별 접근 시간대 heat\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":10,\"colorSchema\":\"Blues\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"overwriteColor\":false,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"group\",\"params\":{\"field\":\"access_date\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"시간\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스명\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 3\":\"rgb(247,251,255)\",\"3 - 6\":\"rgb(227,238,249)\",\"6 - 8\":\"rgb(208,225,242)\",\"8 - 11\":\"rgb(182,212,233)\",\"11 - 13\":\"rgb(148,196,223)\",\"13 - 16\":\"rgb(107,174,214)\",\"16 - 19\":\"rgb(74,152,201)\",\"19 - 21\":\"rgb(46,126,188)\",\"21 - 24\":\"rgb(23,100,171)\",\"24 - 26\":\"rgb(8,74,145)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "60840d20-ba35-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "IP/ID/Service controller",
+      "visState": "{\"title\":\"IP/ID/Service controller\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1537159749871\",\"indexPattern\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"fieldName\":\"access_ip\",\"parent\":\"\",\"label\":\"IP\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":false,\"size\":10,\"order\":\"desc\"}},{\"id\":\"1537159770982\",\"indexPattern\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"fieldName\":\"access_id.keyword\",\"parent\":\"\",\"label\":\"ID\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":false,\"size\":8,\"order\":\"desc\"}},{\"id\":\"1537159838706\",\"indexPattern\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"fieldName\":\"service.keyword\",\"parent\":\"\",\"label\":\"서비스\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"controlledBy\":\"1537159749871\",\"type\":\"phrase\",\"key\":\"access_ip\",\"value\":\"172.21.25.179\",\"params\":{\"query\":\"172.21.25.179\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"access_ip\":{\"query\":\"172.21.25.179\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"controlledBy\":\"1537159770982\",\"type\":\"phrase\",\"key\":\"access_id.keyword\",\"value\":\"ksh00\",\"params\":{\"query\":\"ksh00\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"access_id.keyword\":{\"query\":\"ksh00\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"controlledBy\":\"1537159838706\",\"type\":\"phrase\",\"key\":\"service.keyword\",\"value\":\"bctop\",\"params\":{\"query\":\"bctop\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"service.keyword\":{\"query\":\"bctop\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "3f03cec0-ba34-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "로그인 시도 횟수 metric",
+      "visState": "{\"title\":\"로그인 시도 횟수 metric\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"회\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"field\":\"checkLogin\",\"negate\":false,\"disabled\":false,\"alias\":\"로그인 여부\",\"type\":\"phrase\",\"key\":\"checkLogin\",\"value\":\"true\",\"params\":{\"value\":true}},\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if ( doc['action.keyword'].value =~ /login/) {\\nreturn true\\n}else{\\nreturn false\\n} }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":true}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "4e3e14f0-ba33-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "근무 시간 외 접근 Table",
+      "visState": "{\"title\":\"근무 시간 외 접근 Table\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"access_ip\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"ip\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"access_id.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"접근 id\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"service.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"access_uri.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"접근 uri\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"access_date\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"접근 시간\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { def hour = doc['access_date'].date.hourOfDay;\\ndef day = doc['access_date'].date.dayOfWeek;\\nif(hour >= 8 && hour < 19 && day <6){\\nreturn true;\\n}\\nreturn false; }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":false}}},\"meta\":{\"negate\":false,\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"disabled\":false,\"alias\":\"근무 시간 외 접근\",\"type\":\"custom\",\"key\":\"script\",\"value\":\"{\\\"script\\\":{\\\"inline\\\":\\\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { def hour = doc['access_date'].date.hourOfDay;\\\\ndef day = doc['access_date'].date.dayOfWeek;\\\\nif(hour >= 8 && hour < 19 && day <6){\\\\nreturn true;\\\\n}\\\\nreturn false; }, params.value);\\\",\\\"lang\\\":\\\"painless\\\",\\\"params\\\":{\\\"value\\\":false}}}\"},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "61327cf0-ba32-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "근무 시간 외 접근 mertric",
+      "visState": "{\"title\":\"근무 시간 외 접근 mertric\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"Background\",\"colorsRange\":[{\"from\":0,\"to\":1},{\"from\":1,\"to\":2},{\"from\":2,\"to\":3},{\"from\":3,\"to\":4},{\"from\":4,\"to\":5},{\"from\":5,\"to\":6},{\"from\":6,\"to\":7},{\"from\":7,\"to\":8},{\"from\":8,\"to\":9},{\"from\":9,\"to\":10},{\"from\":10,\"to\":11}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":true,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"회\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"field\":\"checkWorkingTime\",\"negate\":false,\"disabled\":false,\"alias\":\"근무 시간 외 접근\",\"type\":\"custom\",\"key\":\"script\",\"value\":\"{\\\"script\\\":{\\\"inline\\\":\\\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { def hour = doc['access_date'].date.hourOfDay;\\\\ndef day = doc['access_date'].date.dayOfWeek;\\\\nif(hour >= 8 && hour < 19 && day <6){\\\\nreturn true;\\\\n}\\\\nreturn false; }, params.value);\\\",\\\"lang\\\":\\\"painless\\\",\\\"params\\\":{\\\"value\\\":false}}}\"},\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { def hour = doc['access_date'].date.hourOfDay;\\ndef day = doc['access_date'].date.dayOfWeek;\\nif(hour >= 8 && hour < 19 && day <6){\\nreturn true;\\n}\\nreturn false; }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":false}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "b5f0b670-ba33-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "서비스별 접근 IP 합계 bar",
+      "visState": "{\"title\":\"서비스별 접근 IP 합계 bar\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"legendPosition\":\"right\",\"orderBucketsBySum\":true,\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"접근 건수\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"접근 건수\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"접근 건수\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스명\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"access_ip\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"접근 ip\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "9d38aa90-ba40-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "외부 IP 접근 metric",
+      "visState": "{\"title\":\"외부 IP 접근 metric\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Yellow to Red\",\"metricColorMode\":\"Background\",\"colorsRange\":[{\"from\":0,\"to\":1},{\"from\":1,\"to\":2},{\"from\":2,\"to\":3},{\"from\":3,\"to\":4},{\"from\":4,\"to\":5},{\"from\":5,\"to\":6},{\"from\":6,\"to\":7},{\"from\":7,\"to\":8},{\"from\":8,\"to\":9},{\"from\":9,\"to\":10}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":true,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"회\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"constant_score\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"access_ip\":\"175.115.92.120\"}},{\"bool\":{\"must\":{\"range\":{\"access_ip\":{\"gte\":\"172.21.25.0\",\"lte\":\"172.21.25.255\"}}}}}]}}},\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"disabled\":false,\"alias\":\"외부 IP 접근\",\"type\":\"custom\",\"key\":\"constant_score\",\"value\":\"{\\\"filter\\\":{\\\"bool\\\":{\\\"must_not\\\":[{\\\"term\\\":{\\\"access_ip\\\":\\\"175.115.92.120\\\"}},{\\\"bool\\\":{\\\"must\\\":{\\\"range\\\":{\\\"access_ip\\\":{\\\"gte\\\":\\\"172.21.25.0\\\",\\\"lte\\\":\\\"172.21.25.255\\\"}}}}}]}}}\",\"negate\":false},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "32b45930-ba45-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "로그인 성공 건수 metric",
+      "visState": "{\"title\":\"로그인 성공 건수 metric\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"건\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"field\":\"loginResult\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"loginResult\",\"value\":\"success\",\"params\":{\"value\":\"success\"}},\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if(doc['action.keyword'].value =~ /login_Y/){\\nreturn \\\"success\\\"\\n}else{\\nreturn \\\"fail\\\"\\n} }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":\"success\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "28488890-bad6-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "서비스별 접근 건수 cloud",
+      "visState": "{\"title\":\"서비스별 접근 건수 cloud\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":15,\"maxFontSize\":72,\"showLabel\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"가장 많이 접근된 서비스\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":8,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "5eb90550-bade-11e8-8100-1753e3fae69f",
+    "_type": "search",
+    "_source": {
+      "title": "discover",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "access_ip",
+        "access_id",
+        "service",
+        "access_uri",
+        "action",
+        "message"
+      ],
+      "sort": [
+        "access_date",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84",
+    "_type": "index-pattern",
+    "_source": {
+      "title": "elog_index_*",
+      "timeFieldName": "access_date",
+      "fields": "[{\"name\":\"@timestamp\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"@version\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"@version.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"access_date\",\"type\":\"date\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"access_id\",\"type\":\"string\",\"count\":3,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"access_id.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"access_ip\",\"type\":\"ip\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"access_uri\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"access_uri.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"action\",\"type\":\"string\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"action.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"beat.hostname\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"beat.hostname.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"beat.name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"beat.name.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"beat.version\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"beat.version.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"doctype\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"doctype.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"file_date\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"file_date.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"file_path\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"file_path.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"file_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"file_type.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"host.name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"host.name.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"input.type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"input.type.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"message\",\"type\":\"string\",\"count\":3,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"message.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"offset\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"prospector.type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"prospector.type.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"remark\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"remark.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"server\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"server.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"service\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"service.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"source\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"source.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tags\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tags.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"getHourOfDay\",\"type\":\"number\",\"count\":0,\"scripted\":true,\"script\":\"doc['access_date'].date.hourOfDay\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"getDayOfWeek\",\"type\":\"number\",\"count\":0,\"scripted\":true,\"script\":\"doc['access_date'].date.dayOfWeek\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"checkWorkingTime\",\"type\":\"boolean\",\"count\":4,\"scripted\":true,\"script\":\"def hour = doc['access_date'].date.hourOfDay;\\ndef day = doc['access_date'].date.dayOfWeek;\\nif(hour >= 8 && hour < 19 && day <6){\\nreturn true;\\n}\\nreturn false;\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"checkLogin\",\"type\":\"boolean\",\"count\":2,\"scripted\":true,\"script\":\"if ( doc['action.keyword'].value =~ /login/) {\\nreturn true\\n}else{\\nreturn false\\n}\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"loginResult\",\"type\":\"string\",\"count\":0,\"scripted\":true,\"script\":\"if(doc['action.keyword'].value =~ /login_Y/){\\nreturn \\\"success\\\"\\n}else{\\nreturn \\\"fail\\\"\\n}\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"external_ip\",\"type\":\"string\",\"count\":2,\"scripted\":true,\"script\":\"doc['access_ip'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"checkDownload\",\"type\":\"boolean\",\"count\":0,\"scripted\":true,\"script\":\"if ( doc['action.keyword'].value =~ /Download/) { return true }else{ return false }\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false}]",
+      "fieldFormatMap": "{\"checkDownload\":{}}"
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "40e55040-ba45-11e8-8100-1753e3fae69f",
+    "_type": "dashboard",
+    "_source": {
+      "title": "New Dashboard",
+      "hits": 0,
+      "description": "Log Analysis Dashboard\n",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":21,\"w\":11,\"h\":11,\"i\":\"1\"},\"id\":\"3f03cec0-ba34-11e8-8100-1753e3fae69f\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":10,\"w\":9,\"h\":11,\"i\":\"2\"},\"id\":\"61327cf0-ba32-11e8-8100-1753e3fae69f\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":11,\"y\":36,\"w\":24,\"h\":15,\"i\":\"3\"},\"id\":\"4e3e14f0-ba33-11e8-8100-1753e3fae69f\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":21,\"y\":51,\"w\":27,\"h\":30,\"i\":\"5\"},\"id\":\"e00f1270-ba34-11e8-8100-1753e3fae69f\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":70,\"w\":21,\"h\":15,\"i\":\"6\"},\"id\":\"b5f0b670-ba33-11e8-8100-1753e3fae69f\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":11,\"y\":21,\"w\":37,\"h\":15,\"i\":\"7\"},\"id\":\"71b1e820-ba43-11e8-8100-1753e3fae69f\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":8,\"y\":55,\"w\":12,\"h\":15,\"i\":\"8\"},\"id\":\"60840d20-ba35-11e8-8100-1753e3fae69f\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":9,\"y\":10,\"w\":9,\"h\":11,\"i\":\"9\"},\"id\":\"9d38aa90-ba40-11e8-8100-1753e3fae69f\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":1,\"y\":44,\"w\":10,\"h\":11,\"i\":\"10\"},\"id\":\"61327cf0-ba32-11e8-8100-1753e3fae69f\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":85,\"w\":48,\"h\":14,\"i\":\"11\"},\"id\":\"5eb90550-bade-11e8-8100-1753e3fae69f\",\"panelIndex\":\"11\",\"title\":\"모든 로그 기록\",\"type\":\"search\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":8,\"h\":10,\"i\":\"12\"},\"id\":\"d0387910-bae1-11e8-8100-1753e3fae69f\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":32,\"w\":11,\"h\":12,\"i\":\"13\"},\"id\":\"7eaac230-bae4-11e8-8100-1753e3fae69f\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"gridData\":{\"x\":8,\"y\":0,\"w\":40,\"h\":10,\"i\":\"14\"},\"version\":\"6.4.0\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"id\":\"e239aaa0-bae4-11e8-8100-1753e3fae69f\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "00872860-bb22-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "개인정보 다운로드 건수",
+      "visState": "{\"title\":\"개인정보 다운로드 건수\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"field\":\"checkDownload\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"checkDownload\",\"value\":\"true\",\"params\":{\"value\":true}},\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if ( doc['action.keyword'].value =~ /Download/) { return true }else{ return false } }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":true}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "e239aaa0-bae4-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "대시보드 panel",
+      "visState": "{\"title\":\"대시보드 panel\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"markdown\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"count\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"elog_index_*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"show_grid\":1,\"markdown\":\"접근 기록 분석용 대시보드\",\"markdown_less\":\"font-size:3.3em;\",\"markdown_css\":\"#markdown-61ca57f0-469d-11e7-af02-69e470af7417{font-size:3.3em}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "f3909460-bb95-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "ip별 서비스 접근 건수 TOP 5 pie",
+      "visState": "{\"title\":\"ip별 서비스 접근 건수 TOP 5 pie\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"access_ip\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"IP\",\"row\":false}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스명\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "d0387910-bae1-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "총 접근 기록",
+      "visState": "{\"title\":\"총 접근 기록\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "4ef43de0-bb99-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "서비스별 id 접근 건수&비율",
+      "visState": "{\"title\":\"서비스별 id 접근 건수&비율\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":false,\"truncate\":200},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Count\"}},{\"id\":\"ValueAxis-2\",\"name\":\"TopAxis-1\",\"type\":\"value\",\"position\":\"top\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-2\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"orderBucketsBySum\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스명\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"access_id.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"접근 id\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "56a7cc10-bba7-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "무단조회·접근",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"건\"},\"schema\":\"metric\",\"type\":\"count\"}],\"params\":{\"addLegend\":false,\"addTooltip\":true,\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":5},{\"from\":5,\"to\":10},{\"from\":10,\"to\":15},{\"from\":15,\"to\":20},{\"from\":20,\"to\":25},{\"from\":25,\"to\":30},{\"from\":30,\"to\":35},{\"from\":35,\"to\":40},{\"from\":40,\"to\":45},{\"from\":45,\"to\":50},{\"from\":50,\"to\":55},{\"from\":55,\"to\":60},{\"from\":60,\"to\":65},{\"from\":65,\"to\":70},{\"from\":70,\"to\":75},{\"from\":75,\"to\":80},{\"from\":80,\"to\":85},{\"from\":85,\"to\":90},{\"from\":90,\"to\":95},{\"from\":95,\"to\":100}],\"invertColors\":false,\"labels\":{\"show\":true},\"metricColorMode\":\"Background\",\"percentageMode\":false,\"style\":{\"bgColor\":true,\"bgFill\":\"#000\",\"fontSize\":60,\"labelColor\":false,\"subText\":\"\"},\"useRanges\":false},\"type\":\"metric\"},\"title\":\"무단조회·접근\",\"type\":\"metric\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"constant_score\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"access_ip\":\"175.115.92.120\"}},{\"bool\":{\"must\":{\"range\":{\"access_ip\":{\"gte\":\"172.21.25.40\",\"lte\":\"172.21.25.255\"}}}}}]}}},\"meta\":{\"alias\":\"무단조회 및 접근\",\"disabled\":false,\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"key\":\"constant_score\",\"negate\":false,\"type\":\"custom\",\"value\":\"{\\\"filter\\\":{\\\"bool\\\":{\\\"must_not\\\":[{\\\"term\\\":{\\\"access_ip\\\":\\\"175.115.92.120\\\"}},{\\\"bool\\\":{\\\"must\\\":{\\\"range\\\":{\\\"access_ip\\\":{\\\"gte\\\":\\\"172.21.25.40\\\",\\\"lte\\\":\\\"172.21.25.255\\\"}}}}}]}}}\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "5580a470-bb97-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "시간대 별 접근 건수",
+      "visState": "{\"title\":\"시간대 별 접근 건수\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":6,\"colorSchema\":\"Blues\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"overwriteColor\":false,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"접근 건수\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"group\",\"params\":{\"field\":\"access_date\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"시간대\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 10\":\"rgb(247,251,255)\",\"10 - 20\":\"rgb(214,230,244)\",\"20 - 30\":\"rgb(171,208,230)\",\"30 - 40\":\"rgb(107,174,214)\",\"40 - 50\":\"rgb(55,135,192)\",\"50 - 60\":\"rgb(16,92,164)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "83e2d690-bb96-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "id별 서비스 접근 건수 TOP 5 pie",
+      "visState": "{\"title\":\"id별 서비스 접근 건수 TOP 5 pie\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"접근 건수\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"access_id.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"id\",\"row\":false}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스명\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "9aee7e10-bba1-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "서비스 별 ip 건수&비율 horizontal",
+      "visState": "{\"title\":\"서비스 별 ip 건수&비율 horizontal\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"TopAxis-1\",\"type\":\"value\",\"position\":\"top\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"defaultYExtents\":false,\"setYExtents\":false},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"orderBucketsBySum\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스명\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"access_ip\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"접근 ip\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "e49710a0-bbaa-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "로그인 성공 여부 metric",
+      "visState": "{\"title\":\"로그인 성공 여부 metric\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"loginResult\",\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"로그인 성공\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"field\":\"checkLogin\",\"negate\":false,\"disabled\":false,\"alias\":\"로그인 여부\",\"type\":\"phrase\",\"key\":\"checkLogin\",\"value\":\"true\",\"params\":{\"value\":true}},\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if ( doc['action.keyword'].value =~ /login/) {\\nreturn true\\n}else{\\nreturn false\\n} }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":true}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "71b1e820-ba43-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "로그인 시도, 성공 횟수, 접근 시도한 ip 수",
+      "visState": "{\"title\":\"로그인 시도, 성공 횟수, 접근 시도한 ip 수\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"count\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"bar\",\"line_width\":\"0\",\"point_size\":1,\"fill\":\"0.4\",\"stacked\":\"none\",\"label\":\"로그인 시도\",\"value_template\":\"{{value}} 건\"},{\"id\":\"ef0b5250-ba40-11e8-a9a2-47623e3da859\",\"color\":\"#68BC00\",\"split_mode\":\"filter\",\"metrics\":[{\"id\":\"ef0b5251-ba40-11e8-a9a2-47623e3da859\",\"type\":\"count\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"bar\",\"line_width\":\"0\",\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"로그인 성공\",\"filter\":\"action=\\\"login_Y\\\"\",\"value_template\":\"{{value}} 건\"},{\"id\":\"fb08d220-ba41-11e8-a9a2-47623e3da859\",\"color\":\"rgba(188,0,59,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"fb08d221-ba41-11e8-a9a2-47623e3da859\",\"type\":\"cardinality\",\"field\":\"access_ip\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":\"2\",\"fill\":\"0\",\"stacked\":\"none\",\"label\":\"IP Cardinality\"}],\"time_field\":\"access_date\",\"index_pattern\":\"elog_index_*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"show_grid\":1,\"background_color_rules\":[{\"id\":\"6451a400-ba42-11e8-a9a2-47623e3da859\"}],\"bar_color_rules\":[{\"id\":\"b9503750-ba42-11e8-a9a2-47623e3da859\"}],\"markdown\":\"\",\"annotations\":[],\"legend_position\":\"bottom\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "becf7120-bb94-11e8-8100-1753e3fae69f",
+    "_type": "dashboard",
+    "_source": {
+      "title": "loginDashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":21,\"w\":48,\"h\":12,\"i\":\"1\"},\"id\":\"71b1e820-ba43-11e8-8100-1753e3fae69f\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":13,\"h\":21,\"i\":\"2\"},\"id\":\"60840d20-ba35-11e8-8100-1753e3fae69f\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":28,\"y\":0,\"w\":9,\"h\":7,\"i\":\"3\"},\"id\":\"3f03cec0-ba34-11e8-8100-1753e3fae69f\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"fail\":\"#967302\",\"success\":\"#447EBC\"}}},\"gridData\":{\"x\":28,\"y\":7,\"w\":9,\"h\":14,\"i\":\"6\"},\"id\":\"7eaac230-bae4-11e8-8100-1753e3fae69f\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"unicro\":\"#7EB26D\"}}},\"gridData\":{\"x\":12,\"y\":33,\"w\":36,\"h\":13,\"i\":\"7\"},\"id\":\"f3909460-bb95-11e8-8100-1753e3fae69f\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"unicro\":\"#705DA0\"}}},\"gridData\":{\"x\":12,\"y\":46,\"w\":36,\"h\":12,\"i\":\"8\"},\"id\":\"83e2d690-bb96-11e8-8100-1753e3fae69f\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":33,\"w\":12,\"h\":23,\"i\":\"9\"},\"id\":\"5580a470-bb97-11e8-8100-1753e3fae69f\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":13,\"y\":0,\"w\":15,\"h\":21,\"i\":\"10\"},\"id\":\"36a7a460-bbae-11e8-8100-1753e3fae69f\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.4.0\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "7eaac230-bae4-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "로그인 성공/실패 내역",
+      "visState": "{\"title\":\"로그인 성공/실패 내역\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"isDonut\":false,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"로그인 내역\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"loginResult\",\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"성공 여부\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"field\":\"checkLogin\",\"negate\":false,\"disabled\":false,\"alias\":\"로그인 내역\",\"type\":\"phrase\",\"key\":\"checkLogin\",\"value\":\"true\",\"params\":{\"value\":true}},\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if ( doc['action.keyword'].value =~ /login/) {\\nreturn true\\n}else{\\nreturn false\\n} }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":true}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "fe25f150-bb99-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "서비스별 총 접근 건수",
+      "visState": "{\"title\":\"서비스별 총 접근 건수\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"isDonut\":false,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"service.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"서비스명\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "36a7a460-bbae-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "접근 기록 많은 id cloud",
+      "visState": "{\"title\":\"접근 기록 많은 id cloud\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":72,\"showLabel\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"access_id.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "5e39a270-bbaa-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "과다조회 준비중",
+      "visState": "{\"title\":\"과다조회 준비중\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"openLinksInNewTab\":false,\"markdown\":\"### 과다조회\\n### 준비중\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "61548f50-bbb0-11e8-8100-1753e3fae69f",
+    "_type": "visualization",
+    "_source": {
+      "title": "서비스 별 사용한 기능 비율",
+      "visState": "{\"title\":\"서비스 별 사용한 기능 비율\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"isDonut\":false,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"action.keyword\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"acrion\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"script\":{\"script\":{\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if ( doc['action.keyword'].value =~ /login/) {\\nreturn true\\n}else{\\nreturn false\\n} }, params.value);\",\"lang\":\"painless\",\"params\":{\"value\":false}}},\"meta\":{\"negate\":false,\"index\":\"6d00ca10-b7fc-11e8-b6e6-4b1bb79bcd84\",\"disabled\":false,\"alias\":\"로그인은 제외\",\"type\":\"custom\",\"key\":\"script\",\"value\":\"{\\\"script\\\":{\\\"inline\\\":\\\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if ( doc['action.keyword'].value =~ /login/) {\\\\nreturn true\\\\n}else{\\\\nreturn false\\\\n} }, params.value);\\\",\\\"lang\\\":\\\"painless\\\",\\\"params\\\":{\\\"value\\\":false}}}\"},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "10652f90-bb98-11e8-8100-1753e3fae69f",
+    "_type": "dashboard",
+    "_source": {
+      "title": "serviceDashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":39,\"w\":48,\"h\":32,\"i\":\"1\"},\"id\":\"e00f1270-ba34-11e8-8100-1753e3fae69f\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":13,\"h\":20,\"i\":\"2\"},\"id\":\"60840d20-ba35-11e8-8100-1753e3fae69f\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":13,\"y\":0,\"w\":9,\"h\":20,\"i\":\"4\"},\"id\":\"28488890-bad6-11e8-8100-1753e3fae69f\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"ksh00\":\"#3F6833\",\"redkarisma\":\"#806EB7\"}}},\"gridData\":{\"x\":0,\"y\":20,\"w\":23,\"h\":19,\"i\":\"5\"},\"id\":\"4ef43de0-bb99-11e8-8100-1753e3fae69f\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":23,\"y\":20,\"w\":25,\"h\":19,\"i\":\"6\"},\"id\":\"9aee7e10-bba1-11e8-8100-1753e3fae69f\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":22,\"y\":0,\"w\":13,\"h\":20,\"i\":\"7\"},\"id\":\"fe25f150-bb99-11e8-8100-1753e3fae69f\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"gridData\":{\"x\":35,\"y\":0,\"w\":13,\"h\":20,\"i\":\"8\"},\"version\":\"6.4.0\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"id\":\"61548f50-bbb0-11e8-8100-1753e3fae69f\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "e2ac4f10-bb93-11e8-8100-1753e3fae69f",
+    "_type": "dashboard",
+    "_source": {
+      "title": "homeDashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":21,\"w\":48,\"h\":16,\"i\":\"1\"},\"id\":\"5eb90550-bade-11e8-8100-1753e3fae69f\",\"panelIndex\":\"1\",\"type\":\"search\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":22,\"y\":0,\"w\":9,\"h\":11,\"i\":\"2\"},\"id\":\"3f03cec0-ba34-11e8-8100-1753e3fae69f\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":22,\"y\":11,\"w\":9,\"h\":10,\"i\":\"3\"},\"id\":\"9d38aa90-ba40-11e8-8100-1753e3fae69f\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":13,\"y\":0,\"w\":9,\"h\":11,\"i\":\"4\"},\"id\":\"d0387910-bae1-11e8-8100-1753e3fae69f\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":40,\"y\":0,\"w\":8,\"h\":11,\"i\":\"5\"},\"id\":\"00872860-bb22-11e8-8100-1753e3fae69f\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":13,\"y\":11,\"w\":9,\"h\":10,\"i\":\"6\"},\"id\":\"61327cf0-ba32-11e8-8100-1753e3fae69f\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":13,\"h\":21,\"i\":\"7\"},\"id\":\"60840d20-ba35-11e8-8100-1753e3fae69f\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":31,\"y\":11,\"w\":9,\"h\":10,\"i\":\"9\"},\"id\":\"56a7cc10-bba7-11e8-8100-1753e3fae69f\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":31,\"y\":0,\"w\":9,\"h\":11,\"i\":\"11\"},\"id\":\"e49710a0-bbaa-11e8-8100-1753e3fae69f\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.4.0\"},{\"gridData\":{\"x\":40,\"y\":11,\"w\":8,\"h\":10,\"i\":\"12\"},\"version\":\"6.4.0\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"id\":\"5e39a270-bbaa-11e8-8100-1753e3fae69f\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]
